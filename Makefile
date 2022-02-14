@@ -42,7 +42,7 @@ publish: tag push
 pull:
 	docker pull $(NEXUS_REPO)/$(TAG)
 run:
-	docker run -d --rm --name $(IMAGE_NAME) -v ${PWD}/library:/home/myuser/R/arm-unknown-linux-gnueabihf-library/3.3 -v ${PWD}:/home/myuser -p 80:8787 $(DOCKER_IMAGE_TAGNAME)
+	docker run -d --rm --name $(IMAGE_NAME) -v ${PWD}/library:/home/myuser/R/arm-unknown-linux-gnueabihf-library/3.3 -v ${PWD}/data:/home/myuser -p 80:8787 $(DOCKER_IMAGE_TAGNAME)
 stop:
 	docker stop $(IMAGE_NAME)
 test:
